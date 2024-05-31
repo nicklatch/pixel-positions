@@ -20,12 +20,12 @@ class JobFactory extends Factory
     {
         return [
             'employer_id' => Employer::factory(),
-            'title' => fake()->jobTitle(),
-            'salary' => '$' . fake()->randomElements(['30', '50', '55', '70', '84', '100', '155', '145', '185', '205', '1,500'])[0] . ",000 USD",
-            'location' => fake()->randomElements(['Remote', 'On-Site', 'Hybrid']),
-            'schedule' => fake()->randomElements(['Full Time', 'Part Time']),
-            'url' => fake()->url(),
-            'featured' => fake()->boolean(chanceOfGettingTrue: 1),
+            'title' => fake()->jobTitle,
+            'salary' => fake()->randomElement(['$50,000 USD', '$90,000 USD', '$150,000 USD']),
+            'location' => fake()->randomElement(['Remote', 'On-Site', 'Hybrid']),
+            'schedule' => fake()->randomElement(['Full Time', 'Part Time']),
+            'url' => fake()->url,
+            'featured' => false,
         ];
     }
 }
